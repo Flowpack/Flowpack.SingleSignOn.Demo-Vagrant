@@ -3,17 +3,9 @@
 # Recipe:: demoserver
 #
 
-include_recipe "git"
-include_recipe "composer"
-include_recipe "database::mysql"
+include_recipe "typo3-singlesignon::flow_base"
 
-template "/etc/php5/conf.d/typo3-singlesignon.ini" do
-  source "php.ini.erb"
-  owner "root"
-  group "root"
-  mode "0644"
-  notifies :restart, 'service[apache2]'
-end
+include_recipe "database::mysql"
 
 hostsfile_entry "127.0.0.1" do
   # TODO Use attr
@@ -52,7 +44,7 @@ application "typo3-singlesignon-demoserver" do
 
     template "#{current_release}/Configuration/Settings.yaml" do
       # TODO Use attr
-      source "demoinstance/Settings.yaml.erb"
+      source "demoserver/Settings.yaml.erb"
       owner node[:apache][:user]
       group node[:apache][:user]
       mode "0644"
@@ -61,7 +53,7 @@ application "typo3-singlesignon-demoserver" do
   end
 
   migrate true
-  migration_command "./flow doctrine:migrate && ./flow acme.demoinstance:setup:setup"
+  migration_command "./flow doctrine:migrate && ./flow acme.demoserver:setup:setup"
 
   # Use force_deploy to run migrations even if on correct revision
   # action :force_deploy

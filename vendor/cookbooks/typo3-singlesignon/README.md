@@ -1,16 +1,14 @@
-# <a name="title"></a> chef-kibana-ruby [![Build Status](https://secure.travis-ci.org/chlu/chef-kibana-ruby.png)](http://travis-ci.org/chlu/chef-kibana-ruby)
+# chef-typo3-singlesignon
 
 Description
 ===========
 
-A simple cookbook that installs [Kibana](https://github.com/rashidkpc/Kibana) in the new Ruby version. Kibana is a web frontend for analysing Logstash messages in an Elasticsearch index. 
+A cookbook that installs the TYPO3.SingleSignOn Flow demo applications.
 
 Requirements
 ============
 
-Kibana requires a working installation of Elasticsearch and Logstash.
-
-This cookbook depends on `rvm` for providing the Ruby installation. It has been tested on Ubuntu 10.04 so far.
+This cookbook is only useful in a Vagrant deployment with chef-solo right now.
 
 Attributes
 ==========
@@ -26,7 +24,9 @@ Attributes
 Recipes
 =======
 
-* `default` - Downloads Kibana Ruby version from Github, creates a system user specifed by the `user` attribute and extracts it inside the home directory specified by the `home` attribute. It then writes the `KibanaConfig.rb` file based on values contained in the `node[:kibana][:config]` attribute namespace.
+* `default` - Installs demoinstance and demoserver
+* `demoinstance` - Installs a webapp for TYPO3.SingleSignOn.DemoInstance distribution
+* `demoserver` - Installs a webapp for TYPO3.SingleSignOn.DemoServer distribution
 
 License and Author
 ==================

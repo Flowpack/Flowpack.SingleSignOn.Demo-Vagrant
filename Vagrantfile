@@ -2,24 +2,14 @@ Vagrant::Config.run do |config|
   config.vm.box = "precise64"
   config.vm.box_url = 'http://files.vagrantup.com/precise64.box'
 
-  # Forward Apache
-  config.vm.forward_port 80, 8080
+  # Note: Set this IP to value that doesn't exist on your local network
+  # You have to configure hosts entries to this IP for ssodemoserver.vagrant
+  # and ssodemoinstance.vagrant to access the virtual hosts in the VM.
+  config.vm.network :hostonly, "10.11.12.23"
+
+  config.vm.customize ["modifyvm", :id, "--memory", 512]
 
   config.vm.provision :chef_solo do |chef|
-
-    chef.add_recipe "apt"
-    chef.add_recipe "openssl"
-    chef.add_recipe "apache2"
-    chef.add_recipe "mysql"
-    chef.add_recipe "mysql::server"
-    chef.add_recipe "php"
-    # TODO Check if to include these recipes in "typo3-singlesignon"
-    chef.add_recipe "php::module_apc"
-    chef.add_recipe "php::module_curl"
-    chef.add_recipe "php::module_mysql"
-    chef.add_recipe "apache2::mod_php5"
-    chef.add_recipe "apache2::mod_rewrite"
-
     chef.add_recipe "typo3-singlesignon"
 
     # Specify chef attributes
@@ -32,6 +22,4 @@ Vagrant::Config.run do |config|
       }
     }
   end
-
-  config.vm.customize ["modifyvm", :id, "--memory", 512]
 end

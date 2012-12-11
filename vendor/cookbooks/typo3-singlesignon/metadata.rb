@@ -9,12 +9,12 @@ long_description IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 supports         "ubuntu"
 supports         "debian"
 
-supports         "redhat"
-supports         "centos"
-supports         "scientific"
-supports         "amazon"
-supports         "fedora"
-
+depends          "apt"
+depends          "git"
+depends          "apache2"
 depends          "php"
+depends          "application"
 depends          "application_php"
+depends          "database"
+depends          "composer"
 depends          "hostsfile"

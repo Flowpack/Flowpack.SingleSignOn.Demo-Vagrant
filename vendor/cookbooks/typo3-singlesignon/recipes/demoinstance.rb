@@ -3,17 +3,9 @@
 # Recipe:: demoinstance
 #
 
-include_recipe "git"
-include_recipe "composer"
-include_recipe "database::mysql"
+include_recipe "typo3-singlesignon::flow_base"
 
-template "/etc/php5/conf.d/typo3-singlesignon.ini" do
-  source "php.ini.erb"
-  owner "root"
-  group "root"
-  mode "0644"
-  notifies :restart, 'service[apache2]'
-end
+include_recipe "database::mysql"
 
 hostsfile_entry "127.0.0.1" do
   # TODO Use attr
