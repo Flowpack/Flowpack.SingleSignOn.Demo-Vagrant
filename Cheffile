@@ -1,0 +1,12 @@
+site "http://community.opscode.com/api/v1"
+
+cookbook 'apt', :git => 'https://github.com/opscode-cookbooks/apt.git'
+cookbook 'git', :git => 'https://github.com/opscode-cookbooks/git.git'
+cookbook 'apache2', :git => 'https://github.com/opscode-cookbooks/apache2.git'
+cookbook 'php', :git => 'https://github.com/opscode-cookbooks/php.git'
+cookbook 'application', :git => 'https://github.com/opscode-cookbooks/application.git'
+cookbook 'application_php', :git => 'https://github.com/opscode-cookbooks/application_php.git'
+cookbook 'database', :git => 'https://github.com/opscode-cookbooks/database.git'
+cookbook 'composer', :git => 'https://github.com/geoffreytran/chef-composer.git'
+cookbook 'hostsfile', :git => 'https://github.com/customink-webops/hostsfile.git'
+cookbook 'typo3-singlesignon', :path => 'vendor/cookbooks/typo3-singlesignon'
