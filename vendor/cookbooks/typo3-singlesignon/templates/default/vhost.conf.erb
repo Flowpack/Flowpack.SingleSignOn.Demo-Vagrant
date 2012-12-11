@@ -1,34 +1,36 @@
 <VirtualHost *:80>
-ServerName <%= @params[:server_name] %>
-ServerAlias <% @params[:server_aliases].each do |a| %><%= "#{a}" %> <% end %>
-DocumentRoot <%= @params[:docroot] %>/Web
-RewriteEngine On
+    ServerName <%= @params[:server_name] %>
+    ServerAlias <% @params[:server_aliases].each do |a| %><%= "#{a}" %> <% end %>
+    DocumentRoot <%= @params[:docroot] %>/Web
+    RewriteEngine On
 
-<Directory <%= @params[:docroot] %>/Web>
-  Options FollowSymLinks
-  AllowOverride All
-  Order allow,deny
-  Allow from all
-</Directory>
+    SetEnv FLOW_CONTEXT Production
 
-<Directory />
-Options FollowSymLinks
-AllowOverride None
-</Directory>
+    <Directory <%= @params[:docroot] %>/Web>
+        Options FollowSymLinks
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
 
-<Location /server-status>
-SetHandler server-status
+    <Directory />
+        Options FollowSymLinks
+        AllowOverride None
+    </Directory>
 
-Order Deny,Allow
-Deny from all
-Allow from 127.0.0.1
-</Location>
+    <Location /server-status>
+        SetHandler server-status
 
-LogLevel info
-ErrorLog <%= node[:apache][:log_dir] %>/<%= @params[:name] %>-error.log
-CustomLog <%= node[:apache][:log_dir] %>/<%= @params[:name] %>-access.log combined
+        Order Deny,Allow
+        Deny from all
+        Allow from 127.0.0.1
+    </Location>
 
-RewriteEngine On
-RewriteLog <%= node[:apache][:log_dir] %>/<%= @application_name %>-rewrite.log
-RewriteLogLevel 0
+    LogLevel info
+    ErrorLog <%= node[:apache][:log_dir] %>/<%= @params[:name] %>-error.log
+    CustomLog <%= node[:apache][:log_dir] %>/<%= @params[:name] %>-access.log combined
+
+    RewriteEngine On
+    RewriteLog <%= node[:apache][:log_dir] %>/<%= @application_name %>-rewrite.log
+    RewriteLogLevel 0
 </VirtualHost>
