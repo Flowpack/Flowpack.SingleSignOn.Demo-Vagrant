@@ -13,13 +13,6 @@ This cookbook is only useful in a Vagrant deployment with chef-solo right now.
 Attributes
 ==========
 
-* `node[:kibana][:version]` - The version of Kibana to download (corresponds to a tag on Github). Note: Only Ruby versions (starting with 0.2.0) are supported.
-* `node[:kibana][:checksum]` - The MD5 checksum of the downloaded .tar.gz file.
-* `node[:kibana][:home]` - The home directory for the Kibana system user, the current version will be linked as `current` inside this directory.
-* `node[:kibana][:user]` - System user for Kibana, defaults to `kibana`.
-* `node[:kibana][:group]` - System group for Kibana, defaults to `kibana`.
-* `node[:kibana][:ruby_version]` - RVM Ruby version for Kibana, defaults to `ruby-1.9.3-p125`.
-* `node[:kibana][:config]` - A hash of configuration options for Kibana. These match the options available in Kibana's `KibanaConfig.rb` file. See `attributes/default.rb` for more information.
 
 Recipes
 =======

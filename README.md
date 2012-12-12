@@ -22,9 +22,9 @@ Set up host entries in your /etc/hosts (or similar, depending on your OS):
     /etc/hosts
     ----------------------------------------------
     10.11.12.23 ssodemoserver.vagrant
-    10.11.12.23 ssodemoinstance.vagrant
+    10.11.12.23 ssodemoinstance.vagrant ssodemoinstance2.vagrant
 
-Browse to http://ssodemoserver.vagrant/ and you should see the demo server frontend.
+Browse to http://ssodemoserver.vagrant/ and you should see the demo server frontend. A second instance is available on http://ssodemoserver2.vagrant/ for running multi-instance acceptance tests.
 
 License and Author
 ==================

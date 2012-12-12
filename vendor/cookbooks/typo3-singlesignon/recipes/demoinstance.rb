@@ -6,6 +6,7 @@
 include_recipe "typo3-singlesignon::flow_base"
 
 include_recipe "database::mysql"
+include_recipe "apache2::mod_setenvif"
 
 hostsfile_entry "127.0.0.1" do
   # TODO Use attr
@@ -21,9 +22,9 @@ application "typo3-singlesignon-demoinstance" do
   revision node['typo3-singlesignon']['demoinstance']['revision']
 
   mod_php_apache2 do
-    webapp_template "vhost.conf.erb"
+    webapp_template "vhost-demoinstance.conf.erb"
     # TODO Use attr
-    server_aliases ["ssodemoinstance.vagrant"]
+    server_aliases ["ssodemoinstance.vagrant", "ssodemoinstance2.vagrant"]
   end
 
   before_migrate do
@@ -48,7 +49,25 @@ application "typo3-singlesignon-demoinstance" do
       mode "0644"
       # notifies :restart, 'service[apache2]'
     end
+
+    directory "#{current_release}/Configuration/Production/Instance2" do
+      owner node[:apache][:user]
+      group node[:apache][:user]
+      mode 00755
+      recursive true
+      action :create
+    end
+
+    template "#{current_release}/Configuration/Production/Instance2/Settings.yaml" do
+      # TODO Use attr
+      source "demoinstance/Production/Instance2/Settings.yaml.erb"
+      owner node[:apache][:user]
+      group node[:apache][:user]
+      mode "0644"
+      # notifies :restart, 'service[apache2]'
+    end
   end
+
 
   migrate true
   migration_command "./flow doctrine:migrate && ./flow acme.demoinstance:setup:setup"
