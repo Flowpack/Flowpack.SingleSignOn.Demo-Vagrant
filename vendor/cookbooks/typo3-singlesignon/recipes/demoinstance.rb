@@ -11,6 +11,7 @@ include_recipe "apache2::mod_setenvif"
 hostsfile_entry "127.0.0.1" do
   # TODO Use attr
   hostname "ssodemoinstance.vagrant"
+  hostname "ssodemoinstance2.vagrant"
 end
 
 application "typo3-singlesignon-demoinstance" do
