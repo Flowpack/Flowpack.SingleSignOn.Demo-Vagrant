@@ -17,10 +17,8 @@ application "typo3-singlesignon-demoinstance" do
   path "/usr/local/www/sites/ssodemoinstance"
   owner node[:apache][:user]
   group node[:apache][:user]
-  # TODO Use attr
-  repository "https://github.com/chlu/TYPO3.SingleSignOn.DemoInstance-Distribution.git"
-  # TODO Use attr
-  revision "10d4d6e0257a548808cf15148ac4db8f1b75e0d2"
+  repository node['typo3-singlesignon']['demoinstance']['repository']
+  revision node['typo3-singlesignon']['demoinstance']['revision']
 
   mod_php_apache2 do
     webapp_template "vhost.conf.erb"
