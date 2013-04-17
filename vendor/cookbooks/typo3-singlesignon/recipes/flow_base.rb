@@ -25,3 +25,5 @@ template "/etc/php5/conf.d/typo3-singlesignon.ini" do
   mode "0644"
   notifies :restart, 'service[apache2]'
 end
+
+# TODO Update composer, setup .composer cache directory in /var/www

@@ -1,8 +1,8 @@
 default['typo3-singlesignon']['demoinstance']['repository'] = "https://github.com/chlu/TYPO3.SingleSignOn.DemoInstance-Distribution.git"
-default['typo3-singlesignon']['demoinstance']['revision'] = "6ca267f28ffa64c27e9159d60b36e4d236f60c95"
+default['typo3-singlesignon']['demoinstance']['revision'] = "3fa1ba0492da513a34912780a933a0ae0d118f7e"
 
 default['typo3-singlesignon']['demoserver']['repository'] = "https://github.com/chlu/TYPO3.SingleSignOn.DemoServer-Distribution.git"
-default['typo3-singlesignon']['demoserver']['revision'] = "5af9921f5052df561a9ea4cba39083dc89abe2f9"
+default['typo3-singlesignon']['demoserver']['revision'] = "aba23b76fb47f2c30d2013ab595c2e3d266be469"
 
 # More lightweight apache setup for the demo
 include_attribute "apache2"

@@ -1,58 +1,61 @@
 SITE
   remote: http://community.opscode.com/api/v1
   specs:
-    apache (0.0.5)
-      apache2 (>= 0.0.0)
-    aws (0.100.4)
-    build-essential (1.2.0)
-    chef_handler (1.1.2)
+    aws (0.100.6)
+    build-essential (1.3.4)
+    chef_handler (1.1.4)
     dmg (1.1.0)
-    mysql (2.0.2)
+    mysql (3.0.0)
       build-essential (>= 0.0.0)
       openssl (>= 0.0.0)
-    openssl (1.0.0)
-    postgresql (2.0.2)
+    openssl (1.0.2)
+    postgresql (2.4.0)
+      apt (>= 0.0.0)
+      build-essential (>= 0.0.0)
       openssl (>= 0.0.0)
-    runit (0.16.0)
-    windows (1.4.0)
+    runit (1.1.2)
+      build-essential (>= 0.0.0)
+      yum (>= 0.0.0)
+    windows (1.8.8)
       chef_handler (>= 0.0.0)
-    xfs (1.0.0)
-    xml (1.0.4)
-    yum (2.0.2)
+    xfs (1.1.0)
+    xml (1.1.2)
+      build-essential (>= 0.0.0)
+    yum (2.2.0)
 
 GIT
   remote: https://github.com/customink-webops/hostsfile.git
   ref: master
-  sha: ce3fd4c68a718110845f2ec798024705d7d67a1a
+  sha: b1a538c036c0da9147ddb836fb2a76e3852b0fa7
   specs:
-    hostsfile (0.2.2)
+    hostsfile (1.0.0)
 
 GIT
   remote: https://github.com/geoffreytran/chef-composer.git
   ref: master
-  sha: 64b458086f6763aea08a63358d85e21047d43f3a
+  sha: 413b5ddb7e7a9d0b1219e472bd6e4230725f999a
   specs:
-    composer (0.0.4)
-      apache (>= 0.0.0)
+    composer (0.0.5)
+      apache2 (>= 0.0.0)
 
 GIT
   remote: https://github.com/opscode-cookbooks/apache2.git
   ref: master
-  sha: 42418893f27f883d25fea85ed587b443d0171ded
+  sha: 8d9aba97e331c663d6ff245043012d35244470f2
   specs:
-    apache2 (1.3.2)
+    apache2 (1.6.3)
 
 GIT
   remote: https://github.com/opscode-cookbooks/application.git
   ref: master
-  sha: ee109a7a432fc57c50b06612e193fe1c31592636
+  sha: 0d9750467be6a52c9889b17e455a868cc946c374
   specs:
-    application (1.0.5)
+    application (2.0.1)
 
 GIT
   remote: https://github.com/opscode-cookbooks/application_php.git
   ref: master
-  sha: 08de9c64cd01b67e411f14f407254a36fed273c6
+  sha: 2211634e5770bd788f39256f7827abac2a30f6b8
   specs:
     application_php (1.0.4)
       apache2 (>= 0.0.0)
@@ -61,16 +64,16 @@ GIT
 GIT
   remote: https://github.com/opscode-cookbooks/apt.git
   ref: master
-  sha: b0ea5e8ab68236b1f165470c9496bc6648f417c1
+  sha: d425ad73c9cb3b5d40ef5a4b83021cc0b6859afc
   specs:
-    apt (1.5.1)
+    apt (1.9.3)
 
 GIT
   remote: https://github.com/opscode-cookbooks/database.git
   ref: master
-  sha: eccd314c757a56872834766ca4613b333e7efaf3
+  sha: c9784cfc5abb2e7ec7fb524fb59a1bab86d1890b
   specs:
-    database (1.3.7)
+    database (1.3.12)
       aws (>= 0.0.0)
       mysql (>= 1.3.0)
       postgresql (>= 1.0.0)
@@ -79,21 +82,21 @@ GIT
 GIT
   remote: https://github.com/opscode-cookbooks/git.git
   ref: master
-  sha: 51f1820d02f722b020688771e0755c1c4f10945c
+  sha: 61e2e124e61893f908541e2af321595b803eec3e
   specs:
-    git (1.1.0)
+    git (2.4.1)
       build-essential (>= 0.0.0)
       dmg (>= 0.0.0)
-      runit (>= 0.0.0)
+      runit (~> 1.0)
       windows (>= 0.0.0)
       yum (>= 0.0.0)
 
 GIT
   remote: https://github.com/opscode-cookbooks/php.git
   ref: master
-  sha: 7e6a352a71fbff06e3023bb226a76831f6c63fb7
+  sha: 70e5966bae896cb88f72c1c8450f0c9a9c88decb
   specs:
-    php (1.1.1)
+    php (1.1.8)
       build-essential (>= 0.0.0)
       mysql (>= 0.0.0)
       xml (>= 0.0.0)
@@ -102,6 +105,15 @@ PATH
   remote: vendor/cookbooks/typo3-singlesignon
   specs:
     typo3-singlesignon (0.1.0)
+      apache2 (>= 0.0.0)
+      application (>= 0.0.0)
+      application_php (>= 0.0.0)
+      apt (>= 0.0.0)
+      composer (>= 0.0.0)
+      database (>= 0.0.0)
+      git (>= 0.0.0)
+      hostsfile (>= 0.0.0)
+      php (>= 0.0.0)
 
 DEPENDENCIES
   apache2 (>= 0)
