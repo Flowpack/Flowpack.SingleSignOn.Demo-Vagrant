@@ -1,46 +1,61 @@
-# TYPO3.SingleSignOn Demo Vagrant
+# Flowpack.SingleSignOn Demo Vagrant
 
 Description
 ===========
 
-A Vagrant setup for a demo installation of TYPO3.SingeSignOn for Flow.
-
-Requirements
-============
-
-Install Vagrant for your operating system (http://vagrantup.com/) and install the `librarian` gem for installing the
-bundled cookbooks.
+A Vagrant setup for a demo installation of the Flowpack.SingeSignOn demo for TYPO3 Flow.
 
 Installation
 ============
 
-    > librarian-chef install
-    > vagrant up
+First clone the DemoVagrant repository that contains the Vagrant box setup::
 
-Set up host entries in your /etc/hosts (or similar, depending on your OS):
+    git clone https://github.com/Flowpack/Flowpack.SingleSignOn.Demo-Vagrant.git DemoVagrant
+    cd DemoVagrant
 
-    /etc/hosts
-    ----------------------------------------------
+Then install Vagrant_ for your operating system, install the `librarian` gem for downloading bundled cookbooks and start
+the vagrant box::
+
+    gem install librarian
+    librarian-chef install
+      ...
+    vagrant up
+
+The virtual machine should now boot and start to provision the demo setup (this can take a while).
+
+Set up host entries in your `/etc/hosts` (or similar file, depending on your operating system)::
+
     10.11.12.23 ssodemoserver.vagrant
     10.11.12.23 ssodemoinstance.vagrant ssodemoinstance2.vagrant
 
-Browse to http://ssodemoserver.vagrant/ and you should see the demo server frontend. A second instance is available on http://ssodemoserver2.vagrant/ for running multi-instance acceptance tests.
+Browse to http://ssodemoserver.vagrant/ and you should see the demo server frontend. A second instance is available on
+http://ssodemoserver2.vagrant/ for running multi-instance acceptance tests.
 
-License and Author
-==================
+.. _Vagrant: http://www.vagrantup.com/
 
-- Author::      Christopher Hlubek (<hlubek@networkteam.com>)
+Documentation
+=============
 
-- Copyright::   2012, networkteam GmbH
+See http://flowpack-single-sign-on.readthedocs.org/ for the Flowpack Single sign-on documentation.
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+License
+=======
 
-    http://www.apache.org/licenses/LICENSE-2.0
+Copyright (c) 2013 Christopher Hlubek, Robert Lemke
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+Permission is hereby granted, free of charge, to any person obtaining a copy of this
+software and associated documentation files (the "Software"), to deal in the
+Software without restriction, including without limitation the rights to use, copy,
+modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+and to permit persons to whom the Software is furnished to do so, subject to the
+following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
+OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
