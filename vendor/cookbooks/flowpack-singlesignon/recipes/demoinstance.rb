@@ -1,9 +1,9 @@
 #
-# Cookbook Name:: typo3-singlesignon
+# Cookbook Name:: flowpack-singlesignon
 # Recipe:: demoinstance
 #
 
-include_recipe "typo3-singlesignon::flow_base"
+include_recipe "flowpack-singlesignon::flow_base"
 
 include_recipe "database::mysql"
 include_recipe "apache2::mod_setenvif"
@@ -14,13 +14,13 @@ hostsfile_entry "127.0.0.1" do
   hostname "ssodemoinstance2.vagrant"
 end
 
-application "typo3-singlesignon-demoinstance" do
+application "flowpack-singlesignon-demoinstance" do
   # TODO Use attr
   path "/usr/local/www/sites/ssodemoinstance"
   owner node[:apache][:user]
   group node[:apache][:user]
-  repository node['typo3-singlesignon']['demoinstance']['repository']
-  revision node['typo3-singlesignon']['demoinstance']['revision']
+  repository node['flowpack-singlesignon']['demoinstance']['repository']
+  revision node['flowpack-singlesignon']['demoinstance']['revision']
 
   mod_php_apache2 do
     webapp_template "vhost-demoinstance.conf.erb"
@@ -71,8 +71,8 @@ application "typo3-singlesignon-demoinstance" do
 
 
   migrate true
-  migration_command "./flow doctrine:migrate && ./flow acme.demoinstance:setup:setup"
+  migration_command "./flow doctrine:migrate && ./flow flowpack.singlesignon.demoinstance:demo:setup"
 
   # Use force_deploy to run migrations even if on correct revision
-  # action :force_deploy
+  action :force_deploy
 end

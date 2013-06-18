@@ -10,7 +10,7 @@ Vagrant::Config.run do |config|
   config.vm.customize ["modifyvm", :id, "--memory", 512]
 
   config.vm.provision :chef_solo do |chef|
-    chef.add_recipe "typo3-singlesignon"
+    chef.add_recipe "flowpack-singlesignon"
 
     # Specify chef attributes
     chef.json = {

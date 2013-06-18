@@ -7,21 +7,22 @@ TYPO3:
         host: <%= node['mysql']['bind_address'] %>
         user: root
         password: <%= node['mysql']['server_root_password'] %>
+
+Flowpack:
   SingleSignOn:
     Client:
       client:
         # TODO Use attr
         serviceBaseUri: 'http://ssodemoinstance.vagrant/sso/'
-        keyPairUuid: ''
+        publicKeyFingerprint: ''
       server:
         DemoServer:
           # TODO Use attr
           serviceBaseUri: 'http://ssodemoserver.vagrant/sso/'
-          publicKeyUuid: ''
+          publicKeyFingerprint: ''
 
-Acme:
-  DemoInstance:
-    # TODO Use attr
-    demoInstanceName: Vagrant Instance
-    # TODO Use attr
-    demoServerUri: 'http://ssodemoserver.vagrant/'
+    DemoInstance:
+      # TODO Use attr
+      demoInstanceName: Vagrant Instance
+      # TODO Use attr
+      demoServerUri: 'http://ssodemoserver.vagrant/'

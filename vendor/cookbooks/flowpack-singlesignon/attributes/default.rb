@@ -1,8 +1,8 @@
-default['typo3-singlesignon']['demoinstance']['repository'] = "https://github.com/chlu/TYPO3.SingleSignOn.DemoInstance-Distribution.git"
-default['typo3-singlesignon']['demoinstance']['revision'] = "3fa1ba0492da513a34912780a933a0ae0d118f7e"
+default['flowpack-singlesignon']['demoinstance']['repository'] = "https://github.com/Flowpack/Flowpack.SingleSignOn.DemoInstance-Distribution.git"
+default['flowpack-singlesignon']['demoinstance']['revision'] = "95315b209749a36abd338b8bbadc79bac9507f37"
 
-default['typo3-singlesignon']['demoserver']['repository'] = "https://github.com/chlu/TYPO3.SingleSignOn.DemoServer-Distribution.git"
-default['typo3-singlesignon']['demoserver']['revision'] = "aba23b76fb47f2c30d2013ab595c2e3d266be469"
+default['flowpack-singlesignon']['demoserver']['repository'] = "https://github.com/Flowpack/Flowpack.SingleSignOn.DemoServer-Distribution.git"
+default['flowpack-singlesignon']['demoserver']['revision'] = "62432a7fe8ec74dd75d362eb54ff4497cfda89bc"
 
 # More lightweight apache setup for the demo
 include_attribute "apache2"

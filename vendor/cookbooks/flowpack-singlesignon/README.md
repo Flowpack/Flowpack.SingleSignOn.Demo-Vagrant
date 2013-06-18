@@ -1,9 +1,9 @@
-# chef-typo3-singlesignon
+# chef-flowpack-singlesignon
 
 Description
 ===========
 
-A cookbook that installs the TYPO3.SingleSignOn Flow demo applications.
+A cookbook that installs the Flowpack.SingleSignOn demo distributions (server and instance).
 
 Requirements
 ============
@@ -18,15 +18,15 @@ Recipes
 =======
 
 * `default` - Installs demoinstance and demoserver
-* `demoinstance` - Installs a webapp for TYPO3.SingleSignOn.DemoInstance distribution
-* `demoserver` - Installs a webapp for TYPO3.SingleSignOn.DemoServer distribution
+* `demoinstance` - Installs a webapp for Flowpack.SingleSignOn.DemoInstance distribution
+* `demoserver` - Installs a webapp for Flowpack.SingleSignOn.DemoServer distribution
 
 License and Author
 ==================
 
 - Author::      Christopher Hlubek (<hlubek@networkteam.com>)
 
-- Copyright::   2012, networkteam GmbH
+- Copyright::   2012-2013, networkteam GmbH
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

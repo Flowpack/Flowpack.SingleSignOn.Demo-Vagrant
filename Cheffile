@@ -9,4 +9,4 @@ cookbook 'application_php', :git => 'https://github.com/opscode-cookbooks/applic
 cookbook 'database', :git => 'https://github.com/opscode-cookbooks/database.git'
 cookbook 'composer', :git => 'https://github.com/geoffreytran/chef-composer.git'
 cookbook 'hostsfile', :git => 'https://github.com/customink-webops/hostsfile.git'
-cookbook 'typo3-singlesignon', :path => 'vendor/cookbooks/typo3-singlesignon'
+cookbook 'flowpack-singlesignon', :path => 'vendor/cookbooks/flowpack-singlesignon'

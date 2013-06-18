@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: typo3-singlesignon
+# Cookbook Name:: flowpack-singlesignon
 # Recipe:: flow_base
 #
 
@@ -18,12 +18,10 @@ include_recipe "git"
 include_recipe "composer"
 
 # Add settings to php.ini through conf.d for cli and apache2
-template "/etc/php5/conf.d/typo3-singlesignon.ini" do
+template "/etc/php5/conf.d/flowpack-singlesignon.ini" do
   source "php.ini.erb"
   owner "root"
   group "root"
   mode "0644"
   notifies :restart, 'service[apache2]'
 end
-
-# TODO Update composer, setup .composer cache directory in /var/www

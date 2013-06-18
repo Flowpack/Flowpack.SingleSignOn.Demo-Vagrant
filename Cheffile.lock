@@ -102,9 +102,9 @@ GIT
       xml (>= 0.0.0)
 
 PATH
-  remote: vendor/cookbooks/typo3-singlesignon
+  remote: vendor/cookbooks/flowpack-singlesignon
   specs:
-    typo3-singlesignon (0.1.0)
+    flowpack-singlesignon (0.1.0)
       apache2 (>= 0.0.0)
       application (>= 0.0.0)
       application_php (>= 0.0.0)
@@ -122,8 +122,8 @@ DEPENDENCIES
   apt (>= 0)
   composer (>= 0)
   database (>= 0)
+  flowpack-singlesignon (>= 0)
   git (>= 0)
   hostsfile (>= 0)
   php (>= 0)
-  typo3-singlesignon (>= 0)
 
